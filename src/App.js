@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Radium from'radium';
 import './App.css';
 import Person from './components/Person/Person'
 
@@ -32,7 +33,7 @@ class App extends Component {
     nameChangePersons[personIndex] = person;
     this.setState({ persons: nameChangePersons });
   }
-  
+
   togglePersonsHandler = () => {
     const {showPersons} = this.state;
     this.setState({showPersons: !showPersons});
@@ -46,7 +47,11 @@ class App extends Component {
       font: 'inherit',
       border: '1px px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
     };
 
     let renderPersons = null;
@@ -65,6 +70,10 @@ class App extends Component {
         </div>
       );
       styles.backgroundColor = 'red';
+      styles[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      }
     }
 
     // red and bold are set in App.css (globals)
@@ -91,4 +100,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Radium(App);
