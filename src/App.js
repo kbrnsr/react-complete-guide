@@ -32,6 +32,7 @@ class App extends Component {
     nameChangePersons[personIndex] = person;
     this.setState({ persons: nameChangePersons });
   }
+  
   togglePersonsHandler = () => {
     const {showPersons} = this.state;
     this.setState({showPersons: !showPersons});
