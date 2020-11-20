@@ -40,7 +40,7 @@ class App extends Component {
 
   render() {
     const {persons, showPersons} = this.state;
-    const buttonClasses = [classes.Button];
+    let buttonClasses = '';
     let renderPersons = null;
 
     if (showPersons) {
@@ -56,7 +56,7 @@ class App extends Component {
           })}
         </div>
       );
-      buttonClasses.push(classes.Red);
+      buttonClasses = classes.Red;
     }
 
     // red and bold are set in App.css (globals)
@@ -73,7 +73,7 @@ class App extends Component {
         <h1>Hi, I'm a React App</h1>
         <p className={assignedClasses.join(' ')}>This is really working</p>
         <button
-          className={buttonClasses.join(' ')}
+          className={buttonClasses}
           onClick={this.togglePersonsHandler} >
           Toggle Persons
         </button>
