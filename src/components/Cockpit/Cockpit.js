@@ -1,7 +1,7 @@
 import classes from './Cockpit.module.css';
 
 const Cockpit = (props) => {
-  const {personsLength, showPersons, toggle} = props
+  const {title, personsLength, showPersons, toggle} = props
   let buttonClasses = '';
 
   if (showPersons) {
@@ -18,7 +18,7 @@ const Cockpit = (props) => {
   }
   return (
     <div className={classes.Cockpit}>
-    <h1>Hi, I'm a React App</h1>
+    <h1>{title}</h1>
     <p className={assignedClasses.join(' ')}>This is really working</p>
     <button
       className={buttonClasses}

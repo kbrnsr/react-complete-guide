@@ -41,6 +41,7 @@ class App extends Component {
 
   render() {
     const {persons, showPersons} = this.state;
+    const {appTitle} = this.props;
     let renderPersons = null;
 
     if (showPersons) {
@@ -54,7 +55,8 @@ class App extends Component {
 
     return (
       <div className={classes.App}>
-        <Cockpit 
+        <Cockpit
+          title={appTitle} 
           showPersons={showPersons}
           personsLength={persons.length}
           toggle={this.togglePersonsHandler} />
