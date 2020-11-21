@@ -1,4 +1,5 @@
 import classes from './Cockpit.module.css';
+import AuthContext from '../../context/auth-context'
 
 const Cockpit = (props) => {
   const {title, personsLength, showPersons, toggle} = props
@@ -18,13 +19,16 @@ const Cockpit = (props) => {
   }
   return (
     <div className={classes.Cockpit}>
-    <h1>{title}</h1>
-    <p className={assignedClasses.join(' ')}>This is really working</p>
-    <button
-      className={buttonClasses}
-      onClick={toggle} >
-      Toggle Persons
-    </button>
+      <h1>{title}</h1>
+      <p className={assignedClasses.join(' ')}>This is really working</p>
+      <button
+        className={buttonClasses}
+        onClick={toggle} >
+        Toggle Persons
+      </button>
+      <AuthContext.Consumer>
+        {(context) => <button onClick={context.login}>Log in</button>}
+      </AuthContext.Consumer>
     </div>
   );
 };
