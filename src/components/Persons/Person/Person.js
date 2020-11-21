@@ -3,11 +3,12 @@ import withClass from '../../../hoc/withClass';
 import classes from  './Person.module.css'
 
 const Person = (props) => {
+  const {click, name, age, children, changed} = props
   return (
     <Aux>
-      <p onClick={props.click}>I'm {props.name} and I am {props.age} years old!</p>
-      <p>{props.children}</p>
-      <input type="text" onChange={props.changed} value={props.name} />
+      <p onClick={click}>I'm {name} and I am {age} years old!</p>
+      <p>{children}</p>
+      <input type="text" onChange={changed} value={name} />
     </Aux>
   );
 };
