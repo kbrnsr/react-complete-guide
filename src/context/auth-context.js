@@ -3,7 +3,7 @@ import { createContext } from 'react';
 const AuthContext = createContext({
   authenticated: false,
   // better auto-completion from IDE
-  login: () => {}
+  login: () => {},
 });
 
 export default AuthContext;
